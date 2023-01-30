@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32811.315
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shop WebAPI", "Shop WebAPI\Shop WebAPI.csproj", "{505BC057-0466-443A-BF4E-F562873C13B8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shope.BL", "Shope.BL\Shope.BL.csproj", "{EE332E2F-8B89-49D0-B325-08E622489C6D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shope.DAL", "Shope.DAL\Shope.DAL.csproj", "{BF1BAEF7-44C3-45EF-B492-7BB7864D4AEA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{505BC057-0466-443A-BF4E-F562873C13B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{505BC057-0466-443A-BF4E-F562873C13B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{505BC057-0466-443A-BF4E-F562873C13B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{505BC057-0466-443A-BF4E-F562873C13B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE332E2F-8B89-49D0-B325-08E622489C6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE332E2F-8B89-49D0-B325-08E622489C6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE332E2F-8B89-49D0-B325-08E622489C6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE332E2F-8B89-49D0-B325-08E622489C6D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF1BAEF7-44C3-45EF-B492-7BB7864D4AEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF1BAEF7-44C3-45EF-B492-7BB7864D4AEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF1BAEF7-44C3-45EF-B492-7BB7864D4AEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF1BAEF7-44C3-45EF-B492-7BB7864D4AEA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {11209E13-D59D-4948-A190-1F3F6C7C0284}
+	EndGlobalSection
+EndGlobal

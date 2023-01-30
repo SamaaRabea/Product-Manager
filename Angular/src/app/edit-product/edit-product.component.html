@@ -1,0 +1,84 @@
+<div class="row my-5">
+  <div class="col-6 m-auto">
+    <div class="card m-auto">
+      <div class="card-header text-center fs-2 py-3">New Product</div>
+      <div class="card-body">
+        <form class="row g-3" [formGroup]="productForm">
+
+          <div class="form-group col-6 my-3">
+            <label for="name" class="form-label">Code</label>
+            <input type="text" class="form-control" formControlName="code" [(ngModel)]="product.code" readonly/>
+
+          </div>
+
+          <div class="form-group col-6 mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" formControlName="name" [(ngModel)]="product.name"/>
+
+          </div>
+
+          <div class="form-group col-6 mb-3">
+            <label for="versionNum" class="form-label">Version No</label>
+            <input type="number" class="form-control" formControlName="versionNum" [(ngModel)]="product.versionNum"/>
+
+          </div>
+
+
+          <div class="form-group col-6 mb-3">
+            <label for="mobile" class="form-label">Revision No</label>
+            <input type="number" class="form-control" formControlName="revisionNum" [(ngModel)]="product.revisionNum"/>
+
+
+          </div>
+
+          <div class="col-md-4 mb-2 mb-sm-3">
+            <label for="inputEmail4" class="form-label">Edite By</label>
+            <input type="email" class="form-control" id="inputEmail4" formControlName="editBy" [(ngModel)]="product.editBy">
+          </div>
+
+          <div class="col-md-4 mb-sm-3">
+            <label for="inputEmail4" class="form-label">Reviewed By</label>
+            <input type="email" class="form-control" id="inputEmail4" formControlName="reviewedBy" [(ngModel)]="product.reviewedBy">
+          </div>
+
+          <div class="col-md-4 mb-sm-3">
+            <label for="inputEmail4" class="form-label">Approved By</label>
+            <input type="email" class="form-control" id="inputEmail4" formControlName="approvedBy" [(ngModel)]="product.approvedBy">
+          </div>
+
+
+          <mat-form-field appearance="outline" class="col-md-4">
+            <mat-label>Version Date</mat-label>
+            <input formControlName="versionDate" matInput [matDatepicker]="picker" [(ngModel)]="product.versionDate"/>
+            <!-- <mat-hint>MM/DD/YYYY</mat-hint> -->
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="col-md-4">
+            <mat-label>Edite Date</mat-label>
+            <input formControlName="editDate" matInput [matDatepicker]="picker1" [(ngModel)]="product.editDate"/>
+            <!-- <mat-hint>MM/DD/YYYY</mat-hint> -->
+            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+            <mat-datepicker #picker1></mat-datepicker>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="col-md-4">
+            <mat-label>nextReviewDate</mat-label>
+            <input formControlName="nextRevieweDate" matInput [matDatepicker]="picker2" type="datetime"[(ngModel)]="product.nextRevieweDate">
+            <!-- <mat-hint>MM/DD/YYYY</mat-hint> -->
+            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+            <mat-datepicker #picker2></mat-datepicker>
+          </mat-form-field>
+
+
+          <div class="form-group col-12 my-3 text-end">
+            <button type="submit" class="btn btn-primary" mat-raised-button color="accent" (click)="updateProduct()">Update</button>
+            <button type="reset" class="btn btn-secondary mx-2">Cancel</button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

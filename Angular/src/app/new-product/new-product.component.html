@@ -1,0 +1,140 @@
+<div class="row my-5 pb-5">
+  <div class="col-6 m-auto">
+    <div class="card m-auto">
+      <div class="card-header text-center fs-2 py-3">New Product</div>
+      <div class="card-body">
+        <form class="row g-3 container-fluid" [formGroup]="productForm" (ngSubmit)="onSubmit()">
+
+          <div class="form-group col-6 my-3">
+            <label for="name" class="form-label">Code</label>
+            <input type="text" class="form-control" formControlName="code"/>
+            <span *ngIf="!code?.valid && (code?.touched||userSubmited)" class="error-block">
+              <span *ngIf="code?.hasError('required')">
+                Please enter name
+              </span>
+              <span *ngIf="code?.hasError('minlength')">
+                Name is too short
+              </span>
+            </span>
+          </div>
+
+          <div class="form-group col-6 my-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" formControlName="name" />
+            <span *ngIf="!name?.valid && (name?.touched||userSubmited)" class="error-block">
+              <span *ngIf="name?.hasError('required')">
+                Please enter name
+              </span>
+              <span *ngIf="name?.hasError('name')">
+                Not Valid
+              </span>
+            </span>
+          </div>
+
+          <div class="form-group col-6 my-3">
+            <label for="versionNum" class="form-label">Version No</label>
+            <input type="number" class="form-control" formControlName="versionNum"/>
+            <span *ngIf="!versionNum?.valid && (versionNum?.touched||userSubmited)" class="error-block">
+              <span *ngIf="versionNum?.hasError('required')">
+                Please enter versionNum
+              </span>
+            </span>
+          </div>
+
+
+          <div class="form-group col-6 my-3">
+            <label for="mobile" class="form-label">Revision No</label>
+            <input type="number" class="form-control" formControlName="revisionNum" />
+            <span *ngIf="!revisionNum?.valid && (revisionNum?.touched||userSubmited)" class="error-block">
+              <span *ngIf="revisionNum?.hasError('required')">
+                Please enter mobile number
+              </span>
+            </span>
+          </div>
+
+          <div class="col-md-4 mb-sm-3">
+            <label for="inputEmail4" class="form-label">Edite By</label>
+            <input type="email" class="form-control" id="inputEmail4" formControlName="editBy">
+          </div>
+
+          <div class="col-md-4 mb-sm-3">
+            <label for="inputEmail4" class="form-label">Reviewed By</label>
+            <input type="email" class="form-control" id="inputEmail4" formControlName="reviewedBy">
+          </div>
+
+          <div class="col-md-4 mb-sm-3">
+            <label for="inputEmail4" class="form-label">Approved By</label>
+            <input type="email" class="form-control" id="inputEmail4" formControlName="approvedBy">
+          </div>
+
+          <mat-form-field appearance="outline" class="col-md-4">
+            <mat-label class="dataFont">Version Date</mat-label>
+            <input formControlName="versionDate" matInput [matDatepicker]="picker" />
+            <!-- <mat-hint>MM/DD/YYYY</mat-hint> -->
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="col-md-4">
+            <mat-label>Edite Date</mat-label>
+            <input formControlName="editDate" matInput [matDatepicker]="picker1" />
+            <!-- <mat-hint>MM/DD/YYYY</mat-hint> -->
+            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+            <mat-datepicker #picker1></mat-datepicker>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="col-md-4">
+            <mat-label>Next Review Date</mat-label>
+            <input formControlName="nextRevieweDate" matInput [matDatepicker]="picker2" type="datetime">
+            <!-- <mat-hint>MM/DD/YYYY</mat-hint> -->
+            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+            <mat-datepicker #picker2></mat-datepicker>
+          </mat-form-field>
+
+          <form class="row g-3 container-fluid" [formGroup]="VersionsForm" (ngSubmit)="onSubmitsmallForm()">
+           <h1>Forms</h1>
+            <div class="shadow-sm versionForm">
+            <div *ngFor="let item of product_VersionList" class="versuonList d-flex shadow justify-content-between px-2 m-1" >
+              <div>
+                <h4>Item No :{{item.itemNo}}</h4>
+                <h5>Version Date :{{item.versionDate}}</h5>
+              </div>
+              <button mat-icon-button color="warn" (click)="deleteItem(item)">
+                <mat-icon>delete</mat-icon>
+              </button>
+
+            </div>
+
+            <div class="d-flex justify-content-around pt-4">
+              <mat-form-field appearance="outline">
+                <mat-label>Item No</mat-label>
+                <input matInput type="number" class="form-control col-sm-5" formControlName="itemNo">
+              </mat-form-field>
+
+              <mat-form-field appearance="outline" class="col-sm-5">
+                <mat-label>versionDate</mat-label>
+                <input formControlName="versionDate" matInput [matDatepicker]="picker3" type="datetime">
+                <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
+                <mat-datepicker #picker3></mat-datepicker>
+              </mat-form-field>
+            </div>
+            <div class="form-group col-12 mb-4">
+              <button mat-raised-button color="primary" type="submit">Add</button>
+              <button type="reset" class="btn btn-secondary mx-2">Cancel</button>
+            </div>
+
+           </div>
+
+
+         </form>
+
+          <div class="form-group col-12 my-4 text-end">
+            <button type="submit" class="btn btn-primary" mat-raised-button color="accent">Save</button>
+            <button type="reset" class="btn btn-secondary mx-2">Cancel</button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

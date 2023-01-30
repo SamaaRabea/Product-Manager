@@ -1,0 +1,73 @@
+<div class="pb-3 container-fluid">
+  <div class="m-sm-4">
+    <h1 class="fw-bold fs-3">General Details</h1>
+  </div>
+  <div class="container shadow-sm p-sm-5 d-flex align-self-center">
+    <div>
+      <h2 class="fw-bold">Code :
+        <span class="fw-light">
+          {{ product?.code }}
+        </span>
+      </h2>
+      <h2 class="fw-bold">Name :
+        <span class="fw-light">
+          {{ product?.name }}
+        </span>
+      </h2>
+      <h2 class="fw-bold">Version No :
+        <span class="fw-light">
+          {{ product?.versionNum }}
+        </span>
+      </h2>
+      <h2 class="fw-bold">Revision No :
+        <span class="fw-light">
+          {{ product?.revisionNum }}
+        </span>
+      </h2>
+      <h2 class="fw-bold">Version Date :
+        <span class="fw-light">
+          {{ product?.versionDate |date}}
+        </span>
+      </h2>
+      <h2 class="fw-bold">Edit Date :
+      <span class="fw-light">
+        {{ product?.editDate|date }}
+      </span>
+      </h2>
+      <h2 class="fw-bold">Next Revision Date :
+      <span class="fw-light">
+        {{ product?.nextRevieweDate|date }}
+      </span>
+      </h2>
+      <h2 class="fw-bold">Edit By :
+      <span class="fw-light">
+        {{ product?.editBy }}
+      </span>
+      </h2>
+      <h2 class="fw-bold">Reviewed By :
+      <span class="fw-light">
+        {{ product?.reviewedBy }}
+      </span>
+      </h2>
+      <h2 class="fw-bold">Approved By :
+      <span class="fw-light">
+        {{ product?.approvedBy }}
+      </span>
+      </h2>
+    </div>
+    <div class="containt2">
+      <h2 class="fw-bold">Product Version :
+          <div *ngFor="let item of ProductVersion" class="d-flex px-3">
+            <h3 class="fw-bold px-2">
+              Item Number :<span class="fw-light">{{ item.itemNo }}</span>
+            </h3>,
+            <h3 class="fw-bold px-2">
+              Version Date :<span class="fw-light">{{ item.versionDate |date}}</span>
+            </h3>
+          </div>
+      </h2>
+    </div>
+  </div>
+
+
+</div>

@@ -1,0 +1,14 @@
+.example-spacer {
+  flex: 1 1 auto;
+  color: white;
+}
+.navbar {
+  background-color: #243763;
+}
+.btn {
+  background-color: #FF4081;
+  border-color: #FF4081;
+}
+.header{
+  color: white;
+}
