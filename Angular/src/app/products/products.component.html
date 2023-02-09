@@ -1,8 +1,8 @@
 <div class="container-fluid pt-4 px-4">
-  <div class="mat-elevation-z3 col-12">
-    <table class="table caption-top">
+  <div class="mat-elevation-z3 col-sm-12">
+    <table class="table caption-top col-sm-12">
       <!-- <div class="container"> -->
-        <caption class="p-2">
+        <caption class="p-2 col-sm-12" >
           <div class="search__container d-flex justify-content-between py-2">
             <div class="col-sm-8">
               <h3 class="fs-4">Product list</h3>
@@ -13,7 +13,7 @@
           </div>
         </caption>
       <!-- </div> -->
-      <thead class="fs-5">
+      <thead class="fs-5 col-sm-12">
         <tr>
           <th>Code</th>
           <th>Name</th>
@@ -27,7 +27,7 @@
           <th></th>
         </tr>
       </thead>
-      <tbody class="Scrollable-content">
+      <tbody class="Scrollable-content col-sm-12">
         <tr *ngFor="let item of filteredData">
           <td>{{ item.code }}</td>
           <td>{{ item.name }}</td>

@@ -17,6 +17,9 @@ export class NewProductComponent implements OnInit {
   VersionsForm!: FormGroup;
   versions:any;
   product_VersionList:any;
+  ///////////for get all items after add/////////////////
+  filteredData: any;
+  products: any;
   constructor(
     private router: Router,
     private alertify: AlertifyService,
@@ -43,10 +46,8 @@ export class NewProductComponent implements OnInit {
       editBy: new FormControl(''),
       reviewedBy: new FormControl(''),
       approvedBy: new FormControl(''),
-      product_Versions: new FormGroup({
-        itemNo: new FormControl(''),
-        versionDate: new FormControl(''),
-      }),
+      product_Versions: new FormControl('')
+    
     });
 
     this.VersionsForm=new FormGroup({
@@ -76,6 +77,12 @@ export class NewProductComponent implements OnInit {
     } else {
       this.alertify.error('Kindly provide the required fields');
     }
+
+      this.Api.getAllProducts().subscribe((data) => {
+        this.products = data;
+        this.filteredData = this.products;
+      });
+
   }
   onSubmitsmallForm(){
     this.versions = this.VersionsForm.value;
